@@ -74,7 +74,7 @@ func (s *CrobatServer) ReverseDNS(query *crobat.QueryRequest, stream crobat.Crob
 		result := searcher.Result()
 		reply := &crobat.Domain{
 			Domain: result.Domain,
-                        Ipv4: result.Ipv4,
+                        IPv4: result.IPv4,
 		}
 		if err := stream.Send(reply); err != nil {
 			return err
@@ -97,7 +97,7 @@ func (s *CrobatServer) ReverseDNSRange(query *crobat.QueryRequest, stream crobat
 		result := searcher.Result()
 		reply := &crobat.Domain{
 			Domain: result.Domain,
-                        Ipv4: result.Ipv4,
+                        IPv4: result.IPv4,
 		}
 		if err := stream.Send(reply); err != nil {
 			return err
